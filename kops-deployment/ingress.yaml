@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kube-redux-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    #cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    #certmanager.k8s.io/acme-challenge-type: "dns01"
+    #external-dns.alpha.kubernetes.io/alias: "true"
+  namespace: services
+  labels:
+    app: kube-redux
+
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                port:
+                  number: 80
+                name: kube-redux-service
+            path: /
+            pathType: Prefix
+      host: kube-redux.v1.gexdev.com
+  #tls:
+  #- hosts:
+  #    - kube-redux.v1.gexdev.com
+  #  secretName: kube-redux-tls

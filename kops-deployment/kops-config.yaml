@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kops-config-kube-redux
+  namespace: services
+  labels:
+    app: kube-redux
+data:
+  

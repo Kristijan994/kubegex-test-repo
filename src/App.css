@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+:root {
+  --space-grotesk: 'Space Grotesk', sans-serif;
+  /* DarkTheme */
+  --primary-color: #202129;
+  --primary-color-100: #2F3037;
+  --primary-color-200: #24252E;
+  --primary-color-300: rgba(0, 0, 0, .40);
+  --primary-color-h-contrast: #1C1D23;
+
+  --secondary-color: #E9E9EA;
+  --secondary-color-100: #848589;
+  --secondary-color-200: #3B3C43;
+  --secondary-color-300: #2F3037;
+  --secondary-color-400: #26272E;
+  --secondary-color-500: #25262D;
+
+  --accent-color: #21DFBF;
+  --accent-color-50: #21373A;
+  --accent-color-100: rgba(33, 223, 191, .10);
+  --accent-color-200: rgba(33, 223, 191, .15);
+  --accent-color-300: rgba(33, 223, 191, .20);
+  --accent-color-400: rgba(33, 223, 191, .05);
+
+  --neutral-color: #2C2D36;
+  --neutral-color-50: #3D3D45;
+  --neutral-color-100: #9e9ea3;
+  --neutral-color-200: #2B2C34;
+
+  --error-color: #ff6054;
+  --error-color-100: #37292F;
+  --error-color-200: #ff5f543d;
+}
+html {
+  background-color: var(--primary-color);
+}
+img {
+  -webkit-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+}
+a {
+  cursor: pointer;
+}
+div,h1,h2,h3,h4,h5,h6 {
+  color:var(--secondary-color) !important; 
+}
+p, a, label, input {
+  color: var(--secondary-color-100) !important;
+  text-decoration: none !important;
+}
+div,h1,h2 {
+  letter-spacing: -0.90px;
+}
+p,a {
+  letter-spacing: -0.20px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

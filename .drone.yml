@@ -1,0 +1,31 @@
+# Drone KOps Build 
+name: drone-buildx-v3
+kind: pipeline
+type: kubernetes
+
+volumes:
+- name: cache
+  claim:
+    name: drone-runner-pvc
+    read_only: false
+
+steps:
+- name: kops-build
+  image: gexhub.co/plugins/kaniko:latest
+  pull: always
+  settings:
+    hub_repo: kubegex/kube-redux
+    dockerfile: Dockerfile
+    tags:
+    - latest
+  volumes:
+  - name: cache
+    path: /cache
+
+trigger:
+  event: [push, tag]
+  branch: [ main ]
+  paths:
+    - 'src/**'
+    - 'Dockerfile'
+    - '.drone.yml'

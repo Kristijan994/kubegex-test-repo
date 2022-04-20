@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kube-redux-tls
+  namespace: services
+spec:
+  secretName: kube-redux-tls
+  commonName: kube-redux.v1.gexdev.com
+  dnsNames:
+  - kube-redux.v1.gexdev.com
+  - "*.kube-redux.v1.gexdev.com"
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

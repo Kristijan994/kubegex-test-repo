@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-redux
+  namespace: services
+spec:
+  selector:
+    matchLabels:
+      app: kube-redux
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        depsync.gexops.com/enabled: 'true'
+      labels:
+        app: kube-redux
+    spec:
+      containers:
+      - name: kube-redux
+        image: gexhub.co/kubegex/kube-redux:latest
+        envFrom:
+          - configMapRef:
+              name: kops-config-kube-redux
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      dnsPolicy: ClusterFirst
